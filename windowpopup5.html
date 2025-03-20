@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta charset="UTF-8">
+  <title>NO LOGIC</title>
+</head>
+<body>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title"> NO LOGIC </div>
+  </div>
+  <div class="modal-body">
+    ПРИ ПРОБЛЕМ СИГНАЛИЗИРАЙ НА Krasimir Borisov Aladzhov (kaladjov@yettel.bg)
+    <ol class="d">
+      <li> Check CreditRiskControl@yettel.bg for SR type Credit Scoring</li>
+      <li> Check in  Siebel in SR for blank/empty field in BULSTAT/EGN  </li>
+      <li> Set comment „не може да се възползва“ in Siebel<br>ИЛИ<br></li><br>
+
+      <li> Check in  Siebel in SR for  text “Цена – общо за всички устройства xxx ” ;value parameter  must be between 300 lv - 700 lv</li><br>
+      <li> Set comment „не може да се възползва“ in Siebel<br>ИЛИ<br></li><br>
+
+      <li> Check in CCS history of customer for :
+      Collection case ->last  status ADMINISTRATIVE CLOSE –> start MC due -> “> 500” и close date > 3 years<br>ИЛИ<br></li><br>
+
+
+      <li>Check in CCS for :
+        *Status  - not A (Active)<br>ИЛИ<br>
+      *Status  - A (Active)
+      -Life since activation < 3 years
+      и
+      -Collection case -> status OPEN  –> open date  > 3 years
+      <br>ИЛИ<br>
+      *LEGAL CASE  -yes
+      <br>ИЛИ<br>
+      *Dunning history:
+      Suspend for last 6 months – yes
+      <br>ИЛИ<br>
+      *Early collection for last 6 months – yes
+      <br>ИЛИ<br>
+      *Dunning letter for last 3 months – yes
+      <br>ИЛИ<br>
+      *NILA > 5000 lv</li>
+
+
+      <li>Check in CX->Billing -> OCC history of customer for :
+      -Leasing in last 3 months  > 2000 lv total value
+      -Leasing in last  month  > 3 deals
+    </li>
+
+
+      <li>Siebel :
+
+        Set comment „не може да се възползва“ in Siebel</li>
+
+    </ol>
+  </div>
+  <style> modal-body { box-sizing: border-box; }
+    .modal{ top: 50%; left:50%; border: 1px solid black; border-radius:10px; z-index:10; background-color: white; width: 500px; max-width:80%;}
+    .modal-header { border-color: #b4ff00; border-style: solid; text-align: center; color: black; font-size: 26px;padding: 10px 15px; display:flex; justify-content: space-between; align-items: center; border-bottom:1px solid black }
+    .modal-header .title { font-size: 1.12rem; font-weight:bold}
+    .modal-body { padding: 10px 15px;}
+ol.d {list-style-type: lower-alpha;}
+ol {background: #002340;padding: 20px;}
+ol li {background: #002340; color:#b4ff00; padding: 5px;margin-left: 35px;}
+</style>
+
+</div>
+</body>
+</html>

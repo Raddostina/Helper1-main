@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta charset="UTF-8">
+    <title>STICKY NOTE:</title>
+</head>
+<body>
+<div class="modal" id="modal">
+    <div class="modal-header">
+        <div class="title"> CreditLimitChange</div>
+    </div>
+    <div class="modal-body">
+
+        <ol class="d">
+            <li> - сменян ли е последните 3 месеца</li>
+            <li> - когато иска увеличение нов клиент сменяме лимита 3 месеца след активацията</li>
+            <li> - когато иска намаление на лимита не го караме да плаща ако има излезнала фактура</li>
+            <li> - когато иска намаление на лимита го правим дори да е барнат</li>
+            <li> - когато иска увеличение на лимита дали всички карти на клиента са активни</li>
+            <li> - увеличаваме над стандартния ако е взел лизинг през последните 3 месеца </li>
+            <li> - увеличаваме над стандартния гледаме има ли collection case </li>
+            <li> - минимален лимит на 1 карта = 20 лв.</li>
+            <li> - максимален лимит над дефолтния през SIEBEL</li>
+            <li> - максимален лимит изчисляваме средна месечна сметка * 1,3</li>
+
+        </ol>
+    </div>
+    <style> modal-body { box-sizing: border-box; }
+    .modal{ top: 50%; left:50%; border: 1px solid black; border-radius:10px; z-index:10; background-color: white; width: 500px; max-width:80%;}
+    .modal-header { border-color: #b4ff00; border-style: solid; text-align: center; color: black; font-size: 26px;padding: 10px 15px; display:flex; justify-content: space-between; align-items: center; border-bottom:1px solid black }
+    .modal-header .title { font-size: 1.12rem; font-weight:bold}
+    .modal-body { padding: 10px 15px;}
+ol.d {list-style-type: lower-alpha;}
+ol {background: #002340;padding: 20px;}
+ol li {background: #002340; color:#b4ff00; padding: 5px;margin-left: 35px;}
+</style>
+
+</div>
+</body>
+</html>

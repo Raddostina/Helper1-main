@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial scale=1.0">
+    <meta http-equiv= "x-ua-compatible" content= ie=edge>
+    <title>CREDIT CONTROL</title>
+    <link rel="stylesheet" href="scratch_2.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+<body onload="initClock()">
+<!--digital clock start-->
+<div class="datetime">
+    <div class="date">
+        <span id="dayname"> DAY</span>
+        <span id="month"> Month</span>
+        <span id="daynum"> 00</span>
+        <span id="year"> Year</span>
+    </div>
+    <div class="time">
+        <span id="hour"> 00</span>
+        <span id="minutes"> 00</span>
+        <span id="seconds"> 00</span>
+        <span id="period"> AM</span>
+    </div>
+</div>
+<div id="header">
+    <h1 >CREDIT CONTROL HELPER </h1>
+    <img class= "header-image" src="https://play-lh.googleusercontent.com/SiucgVKXBpRhuoWoRBgzHauAV-iXzyxcqkmGptnExGRtkNXGqzNK_EMjPm0E5dnRDnY=w240-h480-rw" alt="Yettel">
+
+    <div class="container1">
+        <span class="openMenu"><i class="fa fa-link">Меню линк:</i></span>
+        <div class="sideMenu">
+            <span class="closeMenu"><i class="fa fa-times"></i></span>
+            <ul class="innerUL">
+                <li><a href="http://anubis/cgi-bin/pmsnew/pms_main.cgi" target="_blank">Anubis</a></li>
+                <li><a href="https://ccf.yettel.bg/ccf/" target="_blank1">RETENTION</a></li>
+                <li><a href="https://epos.yettel.bg/epos/" target="_blank2">EPOS</a></li>
+                <li><a href="http://cx.yettel.bg/CustCare/func/wcs/Login.jsp" target="_blank3">CX</a></li>
+                <li><a href="http://172.16.3.98/ccs/creditlimit/cl.jsp" target="_blank4">CCS</a></li>
+                <li><a href="https://www.numberingplans.com/" target="_blank5">InternationalNumbering</a></li>
+                <li><a href="http://services.globul.bg/admin/" target="_blank6">Services</a></li>
+                <li><a href="http://172.16.3.197/daxyglobal.html" target="_blank7">DAXY</a></li>
+                <li><a href="https://bpa.globul.bg/bpa/billing" target="_blank8">BPA(billing)</a></li>
+                <li><a href="https://sm.cetin.rs/" target="_blank9">CETIN</a></li>
+                <li><a href="http://172.16.217.197:8080/ords/f?p=102:LOGIN_DESKTOP:::::: " target="_blank10">APP</a></li>
+                <li><a href="http://172.16.99.167/ecommunications_enu/start.swe?SWECmd=GotoView&SWEView=GB+SR+Templates+View&SWERF=1&SWEHo=172.16.99.167&SWEBU=1&SWEApplet0=Service+Request+Detail+Applet&SWERowId0=GB-87BBS06" target="_blank11">Siebel</a></li>
+                <li><a href="https://web.lakorda.com/lakorda/?main=1&db=1&auth=20180714082220526det1gsqx9iem2ze2925" target="_blank12">ЛАКОРДА</a></li>
+                <li><a href="http://192.168.0.64/acs/last2d.cgi" target="_blank13">ATM(плащания)</a></li>
+                <li><a href="https://www.yettel.bg/bg/adminmanage" target="_blank14">E-shop</a></li>
+                <li><a href="https://172.16.227.26/RAS/log_load.jsp" target="_blank15">Налети суми</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container2">
+        <p> ДЕН ЗА БИЛИНГ:</p>
+        <div>
+                <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">1</i>
+
+            </label>
+            <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">5</i>
+            </label>
+            <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">10</i>
+            </label>
+            <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">15</i>
+            </label>
+            <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">18</i>
+            </label>
+            <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">20</i>
+            </label>
+            <label>
+                <input type="radio" name="age">
+                <i class="fa fa-times" aria-hidden="true">25</i>
+            </label>
+        </div>
+
+    </div>
+    <ul id="nav">
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Коментар CX(memos)</a>
+            <div class="dropdown-content">
+                <textarea name="message">Do not unbar until xxxx lv paid.Very high xxxxx (VAS например )usage. Do not unbar until xxxx lv paid<</textarea>
+                <textarea name="message">do not unbar until *** lv paid or contact credit control KA informed</textarea>
+                <textarea name="message">Limit = *** lv. until **** paid on time invoices.</textarea>
+                <textarea name="message">not loaded gprs/voice/sms *******(country name)  ****-**-**   **:**:** -  ****-**-**  **:**:** ~ хххх lv</textarea>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Коментар CCS</a>
+            <div class="dropdown-content">
+                <textarea name="message">Промяна на лимит по желание на клиента  :
+                    Уведомяваме Ви,че лимитът Ви е променен на хххх лв.Йетел</textarea>
+                <textarea name="message">При активиране на карти след сторно :
+                    Вашите изходящи услуги са активирани отново. Благодарим Ви за направеното плащане.Йетел</textarea>   
+                <textarea name="message">Спрени за кр лимит :
+                    Вие надвишихте кредитния лимит и изходящите услуги са спрени. Проверете дължимото на *123*4*6#. За повече информация https://yttl.bg/CL</textarea>
+                <textarea name="message">Спрени за Fraud :
+                    Изходящите  Ви услуги са спрени. Проверете дължимото на *123*4*6#. За повече информация https://yttl.bg/CL</textarea>
+                <textarea name="message">Корпоративни клиенти отделни карти при FA :
+                    Уведомяваме Ви,че по картата Ви е регистрирано високо потребление.Моля да направите плащане от хххх лв.Йетел</textarea>    
+                <textarea name="message">Промяна на лимит по наша преценка :
+                    По преценка на отдела за кредит контрол ,кредитният Ви лимит е ххххх лв.Може да бъде възстановен по Ваше желание след хххх платени в срок фактури.Йетел</textarea>
+                <textarea name="message">STAFF USAGE
+                    Уведомяваме Ви,че по служебната Ви карта е регистрирано високо потребление. За повече информация пишете на CreditControl@yettel.bg</textarea>
+                <textarea name="message">STAFF LIMIT
+                    Уведомяваме Ви,че достигнахте лимита на безплатното си потребление по служебната си карта.За повече информация пишете на CreditControl@yettel.bg</textarea>
+                <textarea name="message">STAFF FAMILY
+                    Уведомяваме Ви,че по една от картите Ви  е регистрирано високо потребление. За повече информация пишете на CreditControl@yettel.bg</textarea>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Email KA</a>
+            <div class="dropdown-content">
+                <textarea name="message">Здравейте Колеги,
+Моля за проверка, дали номер ******* е в списъците за корекция на билшок. Предварително ви благодаря.!!!!
+</textarea>
+                <textarea name="message">Номерът е активиран с постпон до билинг</textarea>
+                <textarea name="message">Привет,
+Номер 359***** е активиран и оставен постпон за ден.
+За удължаване на постопона може да се обърнеш в работно време към Вики и Пиронков и Ася.
+</textarea>
+                <textarea name="message">Спираме ли го:
+Company:  ХХХХХХХ
+MSISDN: ХХХХХХХ
+UBE: not loaded gprs/voice/sms *******(country name)  ****-**-**   **:**:** -  ****-**-**  **:**:** ~ хххх lv
+Alarm: *******
+</textarea>
+                <textarea name="message">Привет,
+Този номер е спрян поради високо потребление на УДС
+Company:  xxxxxxxxxx
+MSISDN: xxxxxxxxxx
+UBE: *** lv
+Alarm: VAS
+</textarea>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Текст към Cetin (non active)</a>
+            <div class="dropdown-content">
+                <textarea name="message">Hi,
+We have customers in status “B”(barring of outgoing services) with gprs usage after barring.
+Pls note that  MSISDNs in "yes " column are already sent.
+</textarea>
+                <textarea name="message">Hi,
+We have customers in status “B”(barring of outgoing services) with VOICE usage after barring.
+Pls note that  MSISDNs in "yes " column are already sent.
+</textarea>
+            </div>
+        </li>
+    </ul>
+    <div id="content">
+        <ul class="services">
+            <li id="services-html" class="HTML">
+                <h2><a href="#services-html">Заявка SQL: проверяваме дали е паднал флага</a></h2>
+                <ul>
+                    <li> База: SCORE </li><br>
+                </div>
+                <h3 class="title" style="float:top;width:60px;height:60px;border:6px solid Tomato;"> База: SCORE</h3>
+                <div class="window" data-name="w-7">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:top;width:60px;height:80px;"><br>
+                    <button id='multiplewindow7' class='multiplewindow7' onClick='window.open("windowpopup7.html","popupwindow7","width=300,height=200");' data-modal-target="#modal">База: SCORE</button>
+                </div>
+                    <li> ЕГН:<br>
+                        select *<br>
+                        from f_white_list
+                        WHERE egn ='****'
+                    </li>
+                    <li> Bulstat:<br>
+                        select *
+                        from stage_scoring.f_white_list_pros
+                        WHERE bulstat ='****'
+                    </li>
+                </ul>
+            </li>
+            <li id="services-css" class="css">
+                <h2><a href="#services-css">Заявка SQL: проверка на пос код за E-shop</a></h2>
+                <ul>
+                    <li> База: CCS.HUNTER.world</li><br>
+                    <li> USER: FRAUD </li><br>
+                    <li> PASS: FRAUD</li><br>
+                    <li>select *<br>
+                        <br>from CCS3.BILLABLE_ACCOUNTS<br>
+                        <br>WHERE sent_to_post_code ='1799'<br>
+                    </li>
+                </ul>
+            </li>
+            <li id="services-DAXY" class="css">
+                <h2><a href="#services-css">Заявка SQL: проверка колко предплата иска системата</a></h2>
+                <ul>
+                    <li> База: SCORE DEV</li><br>
+                    <li> USER: VMILUSHEVA </li><br>
+                    <li> PASS: Freedom23! </li><br>
+                    <li>select *<br>
+                        from ONLINE_SCORING.P_ALL_LOGS_CONS
+                        WHERE egn ='*****'
+                    </li>
+                </ul>
+            </li>
+            <li id="services-sql" class="sql">
+                <h2><a href="#services-sql">Обща информация :</a></h2>
+                <ul>
+                    <li> Rout for Manuals:
+                        \\globul.bg\root\FRAUD CONTROL\FCD_shared\stat</li>
+                    <li> E-shop
+                        username > RHSabeva , password > Yettel345</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h3 class="title"> STICKY NOTE:</h3>
+        <div class ="window" data-name="w-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:left;width:42px;height:42px;"><br>
+            <button id='multiplewindow' class='multiplewindow' onClick='window.open("windowpopup.html","popupwindow","position: right; width=300,height=200")'; data-modal-target="#modal">WhiteFlag Check! ЕГН/Булстат</button>
+        </div>
+        <div class="window" data-name="w-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:left;width:42px;height:42px;"><br>
+            <button id='multiplewindow2' class='multiplewindow2' onClick='window.open("windowpopup2.html","popupwindow2","width=300,height=200");' data-modal-target="#modal">WhiteFlag Check!БЮДЖЕТ Булстат: </button>
+        </div>
+        <div class="window" data-name="w-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:left;width:42px;height:42px;"><br>
+            <button id='multiplewindow3' class='multiplewindow3' onClick='window.open("windowpopup3.html","popupwindow3","width=300,height=200");' data-modal-target="#modal">Credit Limit Change:</button>
+        </div>
+        <div class="window" data-name="w-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:left;width:42px;height:42px;"><br>
+            <button id='multiplewindow0' class='multiplewindow0' onClick='window.open("windowpopup0.html","popupwindow0","width=300,height=200");' data-modal-target="#modal">нива на одобрение при промяна лимити на КА</button>
+        </div>
+
+      
+
+
+    </div>
+        <div  id="overlay"></div>
+    <h2>ROBOT :<br></h2>
+    <h3 class="title"> ROBOT DAILY STEPS:</h3><br>
+    <div class="icons">
+        <div class="icon">
+            <div class="bg"></div>
+            <div class="glass">
+                1.<br> TERMINATION
+                <i class="bx bxl-github"></i>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="bg"></div>
+            <div class="glass">
+                2.CL WARNING 7 DAYS AGO
+                <i class="bx bxl-github"></i>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="bg"></div>
+            <div class="glass">
+                3.<br>WF CHECK
+                <i class="bx bxl-github"></i>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="bg"></div>
+            <div class="glass">
+                4.<br>OpenWF Check
+                <i class="bx bxl-github"></i>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="bg"></div>
+            <div class="glass">
+                5.<br>CL BARRING RED POSPONE
+                <i class="bx bxl-github"></i>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper"><br>
+        <br><h3 class="title" style="float:top;width:60px;height:60px;border: 6px solid Tomato;"> ROBOT RULES:</h3><br>
+        <div class ="window" data-name="w-1">
+            <img src="https://www.transparentpng.com/thumb/robot/thinking-human-robot-clipart-png-9fWMqV.png" alt="thinking human robot clipart png @transparentpng.com" alt="" style="float:top;width:60px;height:60px;"><br>
+            <button id='multiplewindow4' class='multiplewindow4' onClick='window.open("windowpopup4.html","popupwindow4","position: right; width=300,height=200")'; data-modal-target="#modal">YES LOGIC<br><span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+                <div class="icon YES">
+                </div></button>
+        </div>
+        <div class="window" data-name="w-2">
+            <img src="https://www.transparentpng.com/thumb/robot/thinking-human-robot-clipart-png-9fWMqV.png" alt="thinking human robot clipart png @transparentpng.com" alt="" style="float:top;width:60px;height:60px;"><br>
+            <button id='multiplewindow5' class='multiplewindow5' onClick='window.open("windowpopup5.html","popupwindow5","width=300,height=200");' data-modal-target="#modal">NO LOGIC<br><span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></span>
+                <div class="icon NO">
+                </div></button>
+        </div>
+        <h3 class="title" style="float:top;width:60px;height:60px;border:6px solid Tomato;"> WF RULES:</h3>
+        <div class="window" data-name="w-6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:top;width:60px;height:80px;"><br>
+            <button id='multiplewindow6' class='multiplewindow6' onClick='window.open("windowpopup6.html","popupwindow6","width=300,height=200");' data-modal-target="#modal">WhiteFlag RULES:</button>
+        </div>
+    </div>
+
+            <div class="table">
+                <h2>Your DAILY STEPS:<br></h2>
+                <h1><i class="fa fa-exclamation-triangle"></i>Приоритизирай !</h1>
+                <div class="Price-row">
+                    <div class="Price-col" data-tilt>
+                        <h4> First Shift </h4>
+                        <h3> 8:30 ~ 9:00 <span>Какво да проверя?</span></h3>
+                        <ul>
+                            <li> - NPMT check -> BPA/ATM </li><br>
+                            <li> - clear NPMT</li><br>
+                            <li> - recalculation</li><br>
+                            <li> - garbage tag (reconnection/ reactivation/ storn) </li><br>
+                            <li> - report (warning-new; barring ) </li><br>
+                            <li> - mails from last night/night alarms</li><br>
+                            <li> - Пускаме мейл с обработените заявки от e-shop</li><br>
+                      
+                        </ul>
+                    </div>
+                    <div class="Price-col" data-tilt>
+                        <h4>През деня </h4>
+                        <h3> 9:00 ~ 18:00 <span> Какво да проверя?</span></h3>
+                        <ul>
+                            <li> - night FraudAlarm </li><br>
+                            <li> - SAVE на получения файл termination в съответната папка</li><br>
+                            <li> - non.active</li><br>
+                            <li> - Lost-stolen</li><br>
+                            <li> - ALL mail 22:00 до 9:00 </li><br>
+                            <li> - След load в 15:30 се пускаме warning-all; </li><br>
+                            <li> - FraudAlarm </li><br>
+                        </ul>
+                    </div>
+                    <div class="Price-col" data-tilt>
+                        <h4> Second Shift: </h4>
+                        <h3> 13:30 ~ 22:00 <span>Какво да проверя?</span></h3>
+                        <ul>
+                            <li> - CreditLimit Document</li><br>
+                            <li> - NILA(report)</li><br>
+                            <li> - FraudAlarm</li><br>
+                            <li> - CreditLimit KA(mail) </li><br>
+                            <li> - Проверяваме за оставени флагчета през деня</li><br>
+                            <li> - Правим между 20:00 и 22:00 Е-SHOP(категория: OLD_new; NEW_new; RETENTION with device leasing; Additional leasing</li><br>
+                            <li> - Вечерта преди билинг пускаме garbage reconnection и reactivation, когато не е вечер преди билинг пускаме само reactivation </li><br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<script src="vanilla-tilt.js"></script>
+</div>
+<!-- CUSTOM JS -->
+<script>
+    var openMenu = document.querySelector(".openMenu");
+    var sideMenu = document.querySelector(".sideMenu");
+    var closeMenu = document.querySelector(".closeMenu");
+    var innerUL = document.querySelector(".innerUL");
+
+    openMenu.onclick = () => {
+        openMenu.style.opacity = "0";
+        sideMenu.style.right = "0";
+        sideMenu.style.opacity = "1";
+        sideMenu.classList.add("outerVisible");
+    }
+    closeMenu.onclick = () => {
+        openMenu.style.opacity = "1";
+        sideMenu.style.right = "-100%";
+        sideMenu.style.opacity = "0";
+        sideMenu.classList.remove("outerVisible");
+    }
+
+</script>
+
+<!--digital clock end-->
+
+<script type="text/javascript">
+    function updateClock() {
+    var now = new Date();
+    var dname = now.getDay(),
+        no = now.getMonth(),
+        dnum = now.getDate(),
+        yr = now.getFullYear(),
+        hou = now.getHours(),
+        min = now.getMinutes(),
+        sec = now.getSeconds(),
+        pe = "AM";
+
+        if(hou == 0){
+           hou = 12;
+        }
+        if(hou > 12){
+           hou = hou - 12;
+           pe = "PM";
+        }
+
+        Number.prototype.pad = function(digits){
+          for(var n = this.toString(); n.length < digits; n = 0 + n);
+          return n;
+        }
+
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+        var values = [week[dname], months[no], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+        for(var i = 0; i < ids.length; i++)
+        document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+    }
+
+    function initClock(){
+    updateClock();
+    window.setInterval("updateClock()",1)
+
+    }
+</script>
+</body>
+</body>
+</html>

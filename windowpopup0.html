@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta charset="UTF-8">
+  <title>WF RULES</title>
+</head>
+<body>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title"> WF RULES</div>
+  </div>
+  <div class="modal-body">
+    Казваме НЕ,когато :
+    <ol class="d">
+      <li> Collection case ->last  status ADMINISTRATIVE CLOSE –> start MC due -> “< 300” (без значение от коя година е кейса )</li>
+      <li> Suspended for last 3 months</li>
+      <li> Early collection for last 3 monthS</li>
+      <li>Dunning letter for last 3 months</li>
+      <li> Leasing in last 3 months not > 2000 lv total value</li>
+      <li>Суми под 100 лв</li>
+      <li>Максимален лимит за активни лизнги (обща сума )на един клиент 7000 лв при клиенти над 10 години,5000 лв при клиенти над 5 години (при изключително добра история)</li>
+      <li>Collection case ->last  status SUCCESSFUL CLOSE –> close date-> ТРЯБВА ДА Е ИЗМИНАЛА ГОДИНА ОТ ДАТАТА,КОГАТО Е ЗАТВОРЕН КЕЙСА И ДАТАТА НА СР,БЕЗ ЗНАЧЕНИЕ КОЛКО СТАР Е КЕЙСА И КАКВА Е СУМАТА</li>
+    </ol>
+  </div>
+  <style> modal-body { box-sizing: border-box; }
+    .modal{ top: 50%; left:50%; border: 1px solid black; border-radius:10px; z-index:10; background-color: white; width: 500px; max-width:80%;}
+    .modal-header { border-color: #b4ff00; border-style: solid; text-align: center; color: black; font-size: 26px;padding: 10px 15px; display:flex; justify-content: space-between; align-items: center; border-bottom:1px solid black }
+    .modal-header .title { font-size: 1.12rem; font-weight:bold}
+    .modal-body { padding: 10px 15px;}
+ol.d {list-style-type: lower-alpha;}
+ol {background: #002340;padding: 20px;}
+ol li {background: #002340; color:#b4ff00; padding: 5px;margin-left: 35px;}
+</style>
+
+</div>
+</body>
+</html>

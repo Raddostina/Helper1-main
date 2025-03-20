@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script>
+<script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta charset="UTF-8">
+  <title>YES LOGIC</title>
+</head>
+<body>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title"> YES logic</div>
+  </div>
+  <div class="modal-body">
+    ПРИ ПРОБЛЕМ СИГНАЛИЗИРАЙ НА Krasimir Borisov Aladzhov(kaladjov@yettel.bg)
+    <ol class="d">
+      <li> Check CreditRiskControl@yettel.bg for SR type Credit Scoring</li>
+      <li> Check in  Siebel in SR for  text “Цена – общо за всички устройства xxx ” ;value parameter  must be between  300 -  700 lv</li>
+      <li> Check in CCS history of customer for :<br>
+      - Status A (Active)<br>
+      - Life since activation > 3 years<br>
+      - Collection case -> status OPEN  –> open date  not > 3 years<br>
+      - collection case -> status SUCCESSFUL CLOSE -> close date -> diff between close date and SR open (date) = 12 months
+      - LEGAL CASE  - no<br>
+      - Dunning history:<br>
+        <br>*Suspend for last 6 months – no<br>
+        <br>*Early collection for last 6 months – no<br>
+        <br>*Dunning letter for last 3 months – no<br>
+        <br>*NILA < 5000 lv<br>
+      </li>
+      <li> Check in CX->Billing -> OCC history of customer for :<br>
+        -Leasing in last 6 months not > 2000 lv total value<br>
+        -Leasing in last  month not > 3 deals<br>
+      <li> Customer Retention Program -> Частни лица – проверка<br>
+        -Check ЕГН at GUI<br>
+        -Select White list at GUI<br>
+        -Check Активирай<br>
+        -Paste  POS from SR in Siebel at Customer Retention Program<br>
+        -Paste Сума  from SR in Siebel at Customer Retention Program<br>
+        -Process Изпълни at Customer Retention Program<br>
+      <li>Siebel<br>
+      <br>-Set comment OK in Siebel</li>
+
+    </ol>
+  </div>
+  <style> modal-body { box-sizing: border-box; }
+    .modal{ top: 50%; left:50%; border: 1px solid black; border-radius:10px; z-index:10; background-color: white; width: 500px; max-width:80%;}
+    .modal-header { border-color: #b4ff00; border-style: solid; text-align: center; color: black; font-size: 26px;padding: 10px 15px; display:flex; justify-content: space-between; align-items: center; border-bottom:1px solid black }
+    .modal-header .title { font-size: 1.12rem; font-weight:bold}
+    .modal-body { padding: 10px 15px;}
+ol.d {list-style-type: lower-alpha;}
+ol {background: #002340;padding: 20px;}
+ol li {background: #002340; color:#b4ff00; padding: 5px;margin-left: 35px;}
+</style>
+
+</div>
+</body>
+</html>
