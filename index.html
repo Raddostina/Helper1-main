@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="scratch_2.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+
 <body onload="initClock()">
 <!--digital clock start-->
 <div class="datetime">
@@ -47,7 +49,7 @@
                 <li><a href="http://172.16.99.167/ecommunications_enu/start.swe?SWECmd=GotoView&SWEView=GB+SR+Templates+View&SWERF=1&SWEHo=172.16.99.167&SWEBU=1&SWEApplet0=Service+Request+Detail+Applet&SWERowId0=GB-87BBS06" target="_blank11">Siebel</a></li>
                 <li><a href="https://web.lakorda.com/lakorda/?main=1&db=1&auth=20180714082220526det1gsqx9iem2ze2925" target="_blank12">ЛАКОРДА</a></li>
                 <li><a href="http://192.168.0.64/acs/last2d.cgi" target="_blank13">ATM(плащания)</a></li>
-                <li><a href="https://www.yettel.bg/bg/adminmanage" target="_blank14">E-shop</a></li>
+                <li><a href="https://shop.yettel.bg/bg/test_adminmanage" target="_blank14">E-shop</a></li>
                 <li><a href="https://172.16.227.26/RAS/log_load.jsp" target="_blank15">Налети суми</a></li>
                 
             </ul>
@@ -92,7 +94,7 @@
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Коментар CX(memos)</a>
             <div class="dropdown-content">
-                <textarea name="message">Do not unbar until xxxx lv paid.Very high xxxxx (VAS например )usage. Do not unbar until xxxx lv paid<</textarea>
+                <textarea name="message">Do not unbar until xxxx lv paid.Very high xxxxx (VAS например )usage. Do not unbar until xxxx lv paid</textarea>
                 <textarea name="message">do not unbar until *** lv paid or contact credit control KA informed</textarea>
                 <textarea name="message">Limit = *** lv. until **** paid on time invoices.</textarea>
                 <textarea name="message">not loaded gprs/voice/sms *******(country name)  ****-**-**   **:**:** -  ****-**-**  **:**:** ~ хххх lv</textarea>
@@ -162,16 +164,12 @@ Pls note that  MSISDNs in "yes " column are already sent.
             </div>
         </li>
     </ul>
-    <div id="content">
+<div id="content">
         <ul class="services">
             <li id="services-html" class="HTML">
                 <h2><a href="#services-html">Заявка SQL: проверяваме дали е паднал флага</a></h2>
                 <ul>
-                    <li> База: SCORE </li><br>
-                </div>
-                <h3 class="title" style="float:top;width:60px;height:60px;border:6px solid Tomato;"> База: SCORE</h3>
                 <div class="window" data-name="w-7">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:top;width:60px;height:80px;"><br>
                     <button id='multiplewindow7' class='multiplewindow7' onClick='window.open("windowpopup7.html","popupwindow7","width=300,height=200");' data-modal-target="#modal">База: SCORE</button>
                 </div>
                     <li> ЕГН:<br>
@@ -189,9 +187,9 @@ Pls note that  MSISDNs in "yes " column are already sent.
             <li id="services-css" class="css">
                 <h2><a href="#services-css">Заявка SQL: проверка на пос код за E-shop</a></h2>
                 <ul>
-                    <li> База: CCS.HUNTER.world</li><br>
-                    <li> USER: FRAUD </li><br>
-                    <li> PASS: FRAUD</li><br>
+                <div class="window" data-name="w-8">
+                    <button id='multiplewindow8' class='multiplewindow8' onClick='window.open("windowpopup8.html","popupwindow8","width=300,height=200");' data-modal-target="#modal">База: CCS.HUNTER.world</button>
+                </div>
                     <li>select *<br>
                         <br>from CCS3.BILLABLE_ACCOUNTS<br>
                         <br>WHERE sent_to_post_code ='1799'<br>
@@ -201,22 +199,29 @@ Pls note that  MSISDNs in "yes " column are already sent.
             <li id="services-DAXY" class="css">
                 <h2><a href="#services-css">Заявка SQL: проверка колко предплата иска системата</a></h2>
                 <ul>
-                    <li> База: SCORE DEV</li><br>
-                    <li> USER: VMILUSHEVA </li><br>
-                    <li> PASS: Freedom23! </li><br>
+                    <div class="window" data-name="w-9">
+                    <button id='multiplewindow9' class='multiplewindow9' onClick='window.open("windowpopup9.html","popupwindow9","width=300,height=200");' data-modal-target="#modal">База: SCORE DEV</button>
+                </div>
                     <li>select *<br>
-                        from ONLINE_SCORING.P_ALL_LOGS_CONS
-                        WHERE egn ='*****'
+                        from ONLINE_SCORING.P_ALL_LOGS_CONS t
+                        WHERE egn ='*****'<br>
+                       <br> select * from ONLINE_SCORING.P_ALL_LOGS_PROS t
+                         where bulstat = 'xxxxxxxxxx'
+                        <li> Заявка Мария </li><br>
+                        <br>select *<br>
+                        from (mstancheva.score_wf_log_cons ('XXXXXXXX' , 5))
                     </li>
                 </ul>
             </li>
             <li id="services-sql" class="sql">
-                <h2><a href="#services-sql">Обща информация :</a></h2>
+                <h2><a href="#services-sql">Обща информация/Коментари :</a></h2>
                 <ul>
-                    <li> Rout for Manuals:
-                        \\globul.bg\root\FRAUD CONTROL\FCD_shared\stat</li>
-                    <li> E-shop
-                        username > RHSabeva , password > Yettel345</li>
+                    <li> E-shop/ коментар:
+                        отказваме,клиента има просрочена фактура и трябва да я заплати;моля,свържете се с клиента </li>
+                    <li> Бюджет/ коментар:
+                        Ако сформирания буджет е под 5 и 5 слагаме коментар: не отговаря на условията  </li>
+                    <li> Тикет/ коментар:
+                        Системата не показва да сте правили опити за подобни сделки преди да поискате уайт флаг.Некоректно сте използвали флага ,който сме разрешили за друга сделка.Можете да използвате канала за специалните разрешения на ЗМ ,ако искате да осъщетвите сделката.  </li>
                 </ul>
             </li>
         </ul>
@@ -236,12 +241,8 @@ Pls note that  MSISDNs in "yes " column are already sent.
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:left;width:42px;height:42px;"><br>
             <button id='multiplewindow3' class='multiplewindow3' onClick='window.open("windowpopup3.html","popupwindow3","width=300,height=200");' data-modal-target="#modal">Credit Limit Change:</button>
         </div>
-        <div class="window" data-name="w-0">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/White_flag_waving.svg" alt="" style="float:left;width:42px;height:42px;"><br>
-            <button id='multiplewindow0' class='multiplewindow0' onClick='window.open("windowpopup0.html","popupwindow0","width=300,height=200");' data-modal-target="#modal">нива на одобрение при промяна лимити на КА</button>
-        </div>
 
-      
+
 
 
     </div>
@@ -333,7 +334,7 @@ Pls note that  MSISDNs in "yes " column are already sent.
                             <li> - non.active</li><br>
                             <li> - Lost-stolen</li><br>
                             <li> - ALL mail 22:00 до 9:00 </li><br>
-                            <li> - След load в 15:30 се пускаме warning-all; </li><br>
+                            <li> - След load в 15:30 се пускаме warning-all(category - KA; KA-Specific; Specific); </li><br>
                             <li> - FraudAlarm </li><br>
                         </ul>
                     </div>
@@ -342,11 +343,10 @@ Pls note that  MSISDNs in "yes " column are already sent.
                         <h3> 13:30 ~ 22:00 <span>Какво да проверя?</span></h3>
                         <ul>
                             <li> - CreditLimit Document</li><br>
-                            <li> - NILA(report)</li><br>
+                            <li> - NILA(report) събота или неделя вечер</li><br>
                             <li> - FraudAlarm</li><br>
                             <li> - CreditLimit KA(mail) </li><br>
                             <li> - Проверяваме за оставени флагчета през деня</li><br>
-                            <li> - Правим между 20:00 и 22:00 Е-SHOP(категория: OLD_new; NEW_new; RETENTION with device leasing; Additional leasing</li><br>
                             <li> - Вечерта преди билинг пускаме garbage reconnection и reactivation, когато не е вечер преди билинг пускаме само reactivation </li><br>
                         </ul>
                     </div>
@@ -418,6 +418,11 @@ Pls note that  MSISDNs in "yes " column are already sent.
 
     }
 </script>
-</body>
+
+<h2>ГРАФИК :</h2>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTedlI_FV15SX8o6y10CI-PqivJNSuO8lANcUC_lTfyOinBUryc7qItJdwSWAwtmQ/pubhtml?gid=78966756&amp;" width="1200" height="600"></iframe>
+</head>
+
 </body>
 </html>
