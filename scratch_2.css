@@ -55,7 +55,7 @@ p{  z-index: 1; ; padding: 3px 10px; color:#1c1b1b; border-radius: 30px; box-sha
 
 w3-dropdown-hover w3-right{ background-size: cover; font-family: Arial; color: white; margin: 0px; padding: 0px; list-style: none; }
 .w3-dropdown-content w3-bar-block w3-border .li a { float: left; width: 200px; height: 40px; background-color:black }
-.window button { width: 30%; padding: 14px 0; background: linear-gradient( 135deg, #B4FF00, #d5b4b4); border-radius: 6px; cursor: pointer; color: #002340; font-size: 16px;}
+.window button { width: 30%; padding: 12px 0; background: linear-gradient( 135deg, #B4FF00, #d5b4b4); border-radius: 6px; cursor: pointer; color: #002340; font-size: 16px;}
 .window button:hover {background: linear-gradient( 135deg, #d5b4b4, #B4FF00); }
 
 #nav {border-style: solid; width: 50%; font-family: Arial, sans-serif;background: #b4ff00; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;}
