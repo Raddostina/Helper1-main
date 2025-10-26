@@ -108,7 +108,7 @@ textarea { width: 100; resize: vertical; padding: 15px; border-radius: 15px; bor
 
 #content { clear: both; }
 #content .services { list-style-type:right; width:; margin: 0 auto; padding: 20px 0 0; overflow: hidden; }
-#content .services > li { width: 350px; height: 400px; float: left; margin-left: 20px; border-width: 3px; border-style: solid; }
+#content .services > li { width: 350px; height: 450px; float: left; margin-left: 20px; border-width: 3px; border-style: solid; }
 #content .services > li { border-radius: 20px; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); margin-bottom: 3px; overflow: hidden; }
 #content .services > li:first-child { margin: 0;}
 #content .services > li.HTML { border-color: #b4ff00;border-style: solid; background-color: rgba(255, 255, 255, .5); }
