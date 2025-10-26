@@ -160,7 +160,7 @@ textarea { width: 100; resize: vertical; padding: 15px; border-radius: 15px; bor
 .Price-col ul li { text-align:left; margin: 15px 0; font-size: 20px; }
 .Price-col ul li::before { content: '#'; color: #fff; font-weight: bold; margin-right: 8px;}
 
-.Schedules-row { width: 90%; max-width: 1100px; margin: auto; display: grid; grid-template-columns: auto auto auto; grid-gap: 15px;}
+.Project.Schedules-row { width: 90%; max-width: 1100px; margin: auto; display: grid; grid-template-columns: auto auto auto; grid-gap: 15px;}
 
 .datetime {display: absolute; justify-content: right; align-items: center; color: #fff; background: linear-gradient( 135deg,#002340, #B4FF00); font-family: "Segoe UI", sans-serif; width: 250px; padding: 15px 10px; border: 3px solid #002340; border-radius: 5px; -webkit-box-reflect: below 1px linear-gradient(transparent, rgba (255, 255, 255, 0.1)); transition: 0.5s; transition-property: background, box-shadow; }
 .datetime:hover { background: linear-gradient( 135deg, #B4FF00, #002340); box-shadow: 0 0 30px #002340;}
