@@ -1,11 +1,56 @@
-<!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#202b2b"><title>Credit Control Helper</title><link rel="stylesheet" href="css/style.css"><style>.logout-button{border:1px solid #dce3d9;background:#fff;color:#344238;border-radius:9px;padding:7px 10px;font:inherit;font-size:12px;cursor:pointer}.logout-button:hover{background:#f1f5eb;border-color:#b5e61d}@media(max-width:600px){.logout-button{padding:6px 8px}.user-name{display:none}}</style></head><body>
+<!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#202b2b"><title>Credit Control Helper</title><link rel="stylesheet" href="css/style.css"><style>.logout-button{border:1px solid #dce3d9;background:#fff;color:#344238;border-radius:9px;padding:7px 10px;font:inherit;font-size:12px;cursor:pointer}.logout-button:hover{background:#f1f5eb;border-color:#b5e61d}@media(max-width:600px){.logout-button{padding:6px 8px}.user-name{display:none}}</style>
+<style>
+.personal-notes-section{margin:26px 0 30px}
+.personal-notes-heading{align-items:center;gap:12px;flex-wrap:wrap}
+.personal-notes-private{font-size:11px;color:#58751b;background:#f0f5e4;border:1px solid #e1ebc8;border-radius:999px;padding:7px 11px;white-space:nowrap}
+.personal-notes-composer{background:#fff;border:1px solid #e1e7de;border-radius:15px;padding:15px;box-shadow:0 7px 22px #1e30200a}
+.personal-notes-composer textarea{width:100%;min-height:74px;resize:vertical;border:1px solid #e1e7de;border-radius:10px;padding:12px;font:inherit;font-size:13px;color:#26332b;outline:none;background:#fbfcfa}
+.personal-notes-composer textarea:focus,.personal-notes-composer select:focus{border-color:#a6ce37;box-shadow:0 0 0 3px #b5e61d24}
+.personal-notes-compose-actions{display:flex;align-items:center;gap:9px;margin-top:10px;flex-wrap:wrap}
+.personal-notes-compose-actions select{border:1px solid #dce3d9;border-radius:9px;padding:8px 10px;background:#fff;color:#344238;font:inherit;font-size:12px}
+.note-color-label{font-size:12px;color:#758078}
+.personal-note-add{margin-left:auto;border:0;border-radius:9px;background:#b5e61d;color:#202b2b;padding:9px 14px;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.personal-note-add:hover{filter:brightness(.96)}
+.personal-notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:14px}
+.personal-sticky-note{min-width:0;min-height:150px;border:1px solid #e4e6d8;border-radius:13px;padding:13px;display:flex;flex-direction:column;gap:9px;box-shadow:0 5px 16px #1e30200a}
+.personal-sticky-note.note-yellow{background:#fff5c7}.personal-sticky-note.note-green{background:#e6f2dc}.personal-sticky-note.note-pink{background:#fbe5eb}.personal-sticky-note.note-blue{background:#e3effa}
+.personal-sticky-note textarea{width:100%;min-height:85px;flex:1;resize:vertical;border:0;background:transparent;color:#26332b;font:inherit;font-size:13px;line-height:1.5;outline:none;padding:0}
+.personal-note-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#68736a;font-size:10px}
+.personal-note-delete{border:0;background:transparent;color:#68736a;cursor:pointer;padding:3px 5px;border-radius:6px;font:inherit;font-size:11px}
+.personal-note-delete:hover{background:#ffffff80;color:#9b3030}
+.personal-notes-empty{grid-column:1/-1;border:1px dashed #dce3d9;border-radius:12px;padding:22px;text-align:center;color:#758078;font-size:12px;background:#ffffff80}
+.personal-notes-footnote{margin:9px 2px 0;color:#879188;font-size:10px}
+@media(max-width:900px){.personal-notes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.personal-notes-grid{grid-template-columns:1fr}.personal-notes-compose-actions{align-items:stretch}.personal-note-add{width:100%;margin-left:0}.personal-notes-private{white-space:normal}}
+</style>
+
+<style>.shift-countdown{margin-top:12px;padding:11px 10px;background:#2b3933;border:1px solid #405047;border-radius:10px}.shift-countdown-label{font-size:10px;color:#bdc9bf;line-height:1.35}.shift-countdown-time{font-size:22px;font-weight:800;letter-spacing:.04em;color:#b5e61d;font-variant-numeric:tabular-nums;margin:3px 0}.shift-countdown-detail{font-size:10px;color:#aab8ae;line-height:1.4}.shift-countdown.no-shift .shift-countdown-time{font-size:14px;color:#d8e0da;letter-spacing:0}@media(max-width:680px){.shift-countdown{display:none}}</style></head><body>
 <div class="app-shell"><aside class="sidebar" id="sidebar"><a class="brand" href="#"><span class="brand-mark">Y</span><span><strong>CREDIT CONTROL</strong><small>HELPER</small></span></a><div><div class="nav-caption">WORKSPACE</div><nav class="main-nav">
-<button class="nav-item active" data-view="home">▦　Начало</button><button class="nav-item" data-view="systems">◎　Работни системи</button><button class="nav-item" data-view="sql">⌘　SQL инструменти</button><button class="nav-item" data-view="templates">▤　Коментари и шаблони</button><button class="nav-item" data-view="notes">▧　Обща информация</button><button class="nav-item" data-view="robot">◈　Robot</button><button class="nav-item" data-view="whiteflag">◇　WhiteFlag</button><button class="nav-item" data-view="schedule">▣　Работен график</button></nav></div><div class="sidebar-bottom"><i></i> Работна среда<br><small>Credit Control Helper</small></div></aside>
+<button class="nav-item active" data-view="home">▦　Начало</button><button class="nav-item" data-view="systems">◎　Работни системи</button><button class="nav-item" data-view="sql">⌘　SQL инструменти</button><button class="nav-item" data-view="templates">▤　Коментари и шаблони</button><button class="nav-item" data-view="notes">▧　Обща информация</button><button class="nav-item" data-view="robot">◈　Robot</button><button class="nav-item" data-view="whiteflag">◇　WhiteFlag</button><button class="nav-item" data-view="schedule">▣　Работен график</button></nav></div><div class="sidebar-bottom"><i></i> Работна среда<br><small>Credit Control Helper</small>
+<div class="shift-countdown" id="shiftCountdown" aria-live="polite"><div class="shift-countdown-label">Оставащо време от смяната</div><div class="shift-countdown-time" id="shiftCountdownTime">--:--:--</div><div class="shift-countdown-detail" id="shiftCountdownDetail">Зареждане на графика…</div></div></div></aside>
 <main class="main-area"><header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumb">Workspace　/　<strong id="breadcrumbName">Начало</strong></div><div class="topbar-right"><span id="clock"></span><span class="user-name" id="loggedUserName"></span><span class="user-avatar" id="loggedUserAvatar">CC</span><button type="button" id="logoutButton" class="logout-button" title="Изход" aria-label="Изход">Изход</button></div></header>
 <section class="view active" id="view-home"><div class="welcome-row"><div><p class="eyebrow">CREDIT CONTROL WORKSPACE</p><h1>Добре дошла! 👋</h1><p class="subtitle">Всичко необходимо за ежедневната работа — подредено на едно място.</p></div><div class="date-card" id="todayDate"></div></div>
 <div class="search-row"><label class="search-box">⌕ <input id="globalSearch" placeholder="Търси система, SQL заявка или шаблон..."></label><button class="primary-btn" data-view-link="systems">Всички инструменти ↗</button></div>
 <div class="section-heading"><div><h2>Бърз достъп</h2><p>Основните инструменти в ежедневната работа</p></div></div><div class="feature-grid">
 <button class="feature-card" data-view-link="systems"><span class="feature-icon">◎</span><strong>Работни системи</strong><small>18 директни работни линка</small></button><button class="feature-card" data-view-link="sql"><span class="feature-icon">⌘</span><strong>SQL инструменти</strong><small>Оригиналните заявки и бази</small></button><button class="feature-card" data-view-link="templates"><span class="feature-icon">▤</span><strong>Коментари и шаблони</strong><small>Оригиналните готови текстове</small></button><button class="feature-card" data-view-link="notes"><span class="feature-icon">▧</span><strong>Обща информация</strong><small>Работни коментари</small></button><button class="feature-card" data-view-link="robot"><span class="feature-icon">◈</span><strong>Robot</strong><small>Daily Steps и логики</small></button><button class="feature-card" data-view-link="whiteflag"><span class="feature-icon">◇</span><strong>WhiteFlag</strong><small>Проверки и правила</small></button><button class="feature-card" data-view-link="schedule"><span class="feature-icon">▣</span><strong>Работен график</strong><small>Смени и Excel графици</small></button></div>
+<section class="personal-notes-section" aria-labelledby="personalNotesTitle">
+  <div class="section-heading spaced personal-notes-heading">
+    <div><h2 id="personalNotesTitle">Моите Sticky Notes</h2><p>Лични бележки за текущия профил</p></div>
+    <span class="personal-notes-private">Само за избрания профил</span>
+  </div>
+  <div class="personal-notes-composer">
+    <textarea id="personalNoteInput" rows="3" placeholder="Напиши си бележка, напомняне или задача..."></textarea>
+    <div class="personal-notes-compose-actions">
+      <label class="note-color-label" for="personalNoteColor">Цвят</label>
+      <select id="personalNoteColor" aria-label="Цвят на бележката">
+        <option value="yellow">Жълт</option><option value="green">Зелен</option><option value="pink">Розов</option><option value="blue">Син</option>
+      </select>
+      <button type="button" class="personal-note-add" id="addPersonalNote">+ Добави бележка</button>
+    </div>
+  </div>
+  <div class="personal-notes-grid" id="personalNotesGrid" aria-live="polite"></div>
+  <p class="personal-notes-footnote" id="personalNotesStatus">Бележките се запазват автоматично на този компютър за избрания профил.</p>
+</section>
 <div class="section-heading spaced"><div><h2>Ден за билинг</h2><p>Избор на дата</p></div></div><div class="panel"><div class="day-options" id="billingDays"><button>1</button><button>5</button><button>10</button><button>15</button><button>18</button><button>20</button><button>25</button></div><p class="helper-note">Маркирай съответния ден за билинг.</p><div class="billing-robot-note"><span class="robot-note-icon">◈</span><div><strong>Работа на робота през дните за билинг</strong><p>Роботът изпълнява специфичните действия автоматично. Не е необходимо да извършваме ръчни действия по тези задачи.</p></div></div></div></section>
 
 <section class="view" id="view-systems"><div class="page-heading"><p class="eyebrow">WORKSPACE</p><h1>Работни системи</h1><p class="subtitle">Директни връзки към оригиналните работни платформи.</p></div><label class="search-box page-search">⌕ <input class="local-search" placeholder="Филтрирай системите..."></label><div class="system-grid" id="systemsGrid"></div></section>
@@ -64,4 +109,74 @@ const avatarNode=document.getElementById("loggedUserAvatar");
 if(nameNode)nameNode.textContent=activeUser||"";
 if(avatarNode)avatarNode.textContent=(activeUser||"").trim().split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
 document.getElementById("logoutButton")?.addEventListener("click",()=>{sessionStorage.removeItem("cch_user");window.location.href="index.html";});
-</script><script src="js/main.js"></script></body></html>
+</script><script src="js/main.js"></script>
+<script>
+(function initShiftCountdown(){
+ const roster={"Георги":[0,0,2,2,2,2,2,2,0,1,1,1,1,1,1,0,1,1,5,5,0,0,2,0,0,0,0,0,0,0],"Десислава":[1,1,1,1,1,0,0,0,2,2,2,2,2,0,0,0,0,0,0,0,0,0,1,1,5,5,5,0,0,2],"Доменика":[2,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,2,2,2,2,2,2,0,0,1,1,1,1,1,1],"Радостина":[0,2,0,5,5,1,1,1,1,0,5,5,5,2,2,2,0,0,1,1,0,0,0,2,2,2,2,2,2,0]};
+ const user=(sessionStorage.getItem('cch_user')||'').trim();
+ const firstName={'Georgi Yanev':'Георги','Desislava Metodieva':'Десислава','Domenika Stoyanova':'Доменика','Radostina Sabeva':'Радостина','Vesela Milusheva':'Весела'}[user];
+ const box=document.getElementById('shiftCountdown'),timeNode=document.getElementById('shiftCountdownTime'),detail=document.getElementById('shiftCountdownDetail');
+ if(!box||!timeNode||!detail)return;
+ const times={1:['08:30','17:00'],2:['13:30','22:00'],3:['09:30','18:00'],5:['10:00','19:00']};
+ const names={1:'Първа смяна',2:'Втора смяна',3:'Трета смяна',5:'Пета смяна'};
+ const pad=n=>String(n).padStart(2,'0');
+ function update(){
+  const now=new Date();
+  if(firstName==='Весела'){
+   const weekday=now.getDay();
+   if(weekday===0||weekday===6){box.classList.add('no-shift');timeNode.textContent='Почивен ден';detail.textContent='Събота и неделя са почивни дни.';return;}
+   box.classList.remove('no-shift');
+   const start=new Date(now);start.setHours(8,0,0,0);const end=new Date(now);end.setHours(17,0,0,0);
+   if(now<start){const sec=Math.floor((start-now)/1000),hh=Math.floor(sec/3600),mm=Math.floor(sec%3600/60),ss=sec%60;timeNode.textContent=pad(hh)+':'+pad(mm)+':'+pad(ss);detail.textContent='Работно време · започва в 08:00 ч.';return;}
+   if(now>=end){timeNode.textContent='Работният ден приключи';detail.textContent='Работно време · 08:00–17:00 ч.';return;}
+   const sec=Math.floor((end-now)/1000),hh=Math.floor(sec/3600),mm=Math.floor(sec%3600/60),ss=sec%60;timeNode.textContent=pad(hh)+':'+pad(mm)+':'+pad(ss);detail.textContent='Оставащо време · край в 17:00 ч.';return;
+  }
+  if(now.getFullYear()!==2026||now.getMonth()!==10){box.classList.add('no-shift');timeNode.textContent='Няма график';detail.textContent='Наличен е графикът за ноември 2026 г.';return;}
+  const days=roster[firstName];
+  if(!days){box.classList.add('no-shift');timeNode.textContent='Няма данни';detail.textContent='Няма ред за '+(firstName||'този профил')+' в ноемврийския график.';return;}
+  const code=days[now.getDate()-1];
+  if(code===0||code==null){box.classList.add('no-shift');timeNode.textContent='Почивен ден';detail.textContent='Днес няма планирана смяна.';return;}
+  if(code===6){box.classList.add('no-shift');timeNode.textContent='Stand by';detail.textContent='Днес си на Stand by.';return;}
+  if(code==='T'){box.classList.add('no-shift');timeNode.textContent='Training';detail.textContent='Днес си на обучение.';return;}
+  const shift=times[code];if(!shift){box.classList.add('no-shift');timeNode.textContent='Няма смяна';detail.textContent='Непознат код: '+code;return;}
+  box.classList.remove('no-shift');const [h,m]=shift[1].split(':').map(Number);const end=new Date(now);end.setHours(h,m,0,0);
+  if(now>=end){timeNode.textContent='Смяната приключи';detail.textContent=names[code]+' · '+shift[0]+'–'+shift[1];return;}
+  const sec=Math.floor((end-now)/1000),hh=Math.floor(sec/3600),mm=Math.floor(sec%3600/60),ss=sec%60;
+  timeNode.textContent=pad(hh)+':'+pad(mm)+':'+pad(ss);detail.textContent=names[code]+' · край '+shift[1];
+ }
+ update();setInterval(update,1000);
+})();
+</script>
+<script>
+(function initPersonalStickyNotes(){
+  const user=(sessionStorage.getItem('cch_user')||'').trim();
+  if(!user) return;
+  const slug=user.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'');
+  const storageKey='cch_sticky_notes_'+slug;
+  const input=document.getElementById('personalNoteInput');
+  const color=document.getElementById('personalNoteColor');
+  const add=document.getElementById('addPersonalNote');
+  const grid=document.getElementById('personalNotesGrid');
+  const status=document.getElementById('personalNotesStatus');
+  if(!input||!color||!add||!grid) return;
+  let notes=[];
+  try{notes=JSON.parse(localStorage.getItem(storageKey)||'[]');if(!Array.isArray(notes))notes=[];}catch(e){notes=[];}
+  const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(notes));if(status)status.textContent='Запазено автоматично за '+user+' на този компютър.';}catch(e){if(status)status.textContent='Неуспешно запазване. Провери свободното място в браузъра.';}};
+  const render=()=>{
+    grid.replaceChildren();
+    if(!notes.length){const empty=document.createElement('div');empty.className='personal-notes-empty';empty.textContent='Все още нямаш бележки. Добави първата си бележка от полето по-горе.';grid.appendChild(empty);return;}
+    notes.forEach(note=>{
+      const card=document.createElement('article');card.className='personal-sticky-note note-'+(note.color||'yellow');
+      const area=document.createElement('textarea');area.value=note.text||'';area.setAttribute('aria-label','Текст на бележката');area.placeholder='Твоята бележка...';
+      area.addEventListener('input',()=>{note.text=area.value;note.updatedAt=new Date().toISOString();save();});
+      const meta=document.createElement('div');meta.className='personal-note-meta';
+      const date=document.createElement('span');date.textContent='Създадена: '+(note.createdAt?new Date(note.createdAt).toLocaleString('bg-BG',{dateStyle:'short',timeStyle:'short'}):'');
+      const del=document.createElement('button');del.type='button';del.className='personal-note-delete';del.textContent='Изтрий';del.addEventListener('click',()=>{notes=notes.filter(n=>n.id!==note.id);save();render();});
+      meta.append(date,del);card.append(area,meta);grid.appendChild(card);
+    });
+  };
+  add.addEventListener('click',()=>{const text=input.value.trim();if(!text){input.focus();return;}notes.unshift({id:(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+'_'+Math.random().toString(36).slice(2),text,color:color.value,createdAt:new Date().toISOString()});save();render();input.value='';input.focus();});
+  render();
+})();
+</script>
+</body></html>
