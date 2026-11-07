@@ -1,59 +1,73 @@
-<!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#202b2b"><title>Credit Control Helper</title><link rel="stylesheet" href="css/style.css"></head><body>
-<div class="app-shell"><aside class="sidebar" id="sidebar"><a class="brand" href="#"><span class="brand-mark">Y</span><span><strong>CREDIT CONTROL</strong><small>HELPER</small></span></a><div><div class="nav-caption">WORKSPACE</div><nav class="main-nav">
-<button class="nav-item active" data-view="home">▦　Начало</button><button class="nav-item" data-view="systems">◎　Работни системи</button><button class="nav-item" data-view="sql">⌘　SQL инструменти</button><button class="nav-item" data-view="templates">▤　Коментари и шаблони</button><button class="nav-item" data-view="notes">▧　Обща информация</button><button class="nav-item" data-view="robot">◈　Robot</button><button class="nav-item" data-view="whiteflag">◇　WhiteFlag</button><button class="nav-item" data-view="schedule">▣　Работен график</button></nav></div><div class="sidebar-bottom"><i></i> Работна среда<br><small>Credit Control Helper</small></div></aside>
-<main class="main-area"><header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumb">Workspace　/　<strong id="breadcrumbName">Начало</strong></div><div class="topbar-right"><span id="clock"></span><span class="user-avatar">CC</span></div></header>
-<section class="view active" id="view-home"><div class="welcome-row"><div><p class="eyebrow">CREDIT CONTROL WORKSPACE</p><h1>Добре дошла! 👋</h1><p class="subtitle">Всичко необходимо за ежедневната работа — подредено на едно място.</p></div><div class="date-card" id="todayDate"></div></div>
-<div class="search-row"><label class="search-box">⌕ <input id="globalSearch" placeholder="Търси система, SQL заявка или шаблон..."></label><button class="primary-btn" data-view-link="systems">Всички инструменти ↗</button></div>
-<div class="section-heading"><div><h2>Бърз достъп</h2><p>Основните инструменти в ежедневната работа</p></div></div><div class="feature-grid">
-<button class="feature-card" data-view-link="systems"><span class="feature-icon">◎</span><strong>Работни системи</strong><small>18 директни работни линка</small></button><button class="feature-card" data-view-link="sql"><span class="feature-icon">⌘</span><strong>SQL инструменти</strong><small>Оригиналните заявки и бази</small></button><button class="feature-card" data-view-link="templates"><span class="feature-icon">▤</span><strong>Коментари и шаблони</strong><small>Оригиналните готови текстове</small></button><button class="feature-card" data-view-link="notes"><span class="feature-icon">▧</span><strong>Обща информация</strong><small>Работни коментари</small></button><button class="feature-card" data-view-link="robot"><span class="feature-icon">◈</span><strong>Robot</strong><small>Daily Steps и логики</small></button><button class="feature-card" data-view-link="whiteflag"><span class="feature-icon">◇</span><strong>WhiteFlag</strong><small>Проверки и правила</small></button><button class="feature-card" data-view-link="schedule"><span class="feature-icon">▣</span><strong>Работен график</strong><small>Смени и Excel графици</small></button></div>
-<div class="section-heading spaced"><div><h2>Ден за билинг</h2><p>Избор на дата</p></div></div><div class="panel"><div class="day-options" id="billingDays"><button>1</button><button>5</button><button>10</button><button>15</button><button>18</button><button>20</button><button>25</button></div><p class="helper-note">Маркирай съответния ден за билинг.</p><div class="billing-robot-note"><span class="robot-note-icon">◈</span><div><strong>Работа на робота през дните за билинг</strong><p>Роботът изпълнява специфичните действия автоматично. Не е необходимо да извършваме ръчни действия по тези задачи.</p></div></div></div></section>
-
-<section class="view" id="view-systems"><div class="page-heading"><p class="eyebrow">WORKSPACE</p><h1>Работни системи</h1><p class="subtitle">Директни връзки към оригиналните работни платформи.</p></div><label class="search-box page-search">⌕ <input class="local-search" placeholder="Филтрирай системите..."></label><div class="system-grid" id="systemsGrid"></div></section>
-
-<section class="view" id="view-sql"><div class="page-heading"><p class="eyebrow">DATABASE TOOLS</p><h1>SQL инструменти</h1><p class="subtitle">Оригинални SQL проверки и информация за използваните бази.</p></div><label class="search-box page-search">⌕ <input class="local-search" placeholder="Търси SQL заявка..."></label><div class="sql-list" id="sqlList"></div></section>
-
-<section class="view" id="view-templates"><div class="page-heading"><p class="eyebrow">COMMUNICATION</p><h1>Коментари и шаблони</h1><p class="subtitle">Оригиналните текстове от стария инструмент — с копиране с един бутон.</p></div><div id="templateSections"></div></section>
-
-<section class="view" id="view-notes"><div class="page-heading"><p class="eyebrow">REFERENCE</p><h1>Обща информация и коментари</h1><p class="subtitle">Работни бележки от оригиналната страница.</p></div><div class="panel" id="generalNotes"></div></section>
-
-<section class="view" id="view-robot"><div class="page-heading"><p class="eyebrow">WORKFLOW</p><h1>Robot</h1><p class="subtitle">Оригинални дневни стъпки и правила.</p></div><div class="section-heading"><h2>Robot Daily Steps</h2></div><div class="steps-grid" id="robotSteps"></div><div class="section-heading spaced"><h2>Robot Rules</h2></div><div class="simple-grid"><button class="simple-card popup" data-popup="windowpopup4.html"><span class="feature-icon">✓</span><b>YES LOGIC</b><small>Отвори оригиналните указания</small></button><button class="simple-card popup" data-popup="windowpopup5.html"><span class="feature-icon">!</span><b>NO LOGIC</b><small>Отвори оригиналните указания</small></button></div></section>
-
-<section class="view" id="view-whiteflag"><div class="page-heading"><p class="eyebrow">CHECKS & RULES</p><h1>WhiteFlag</h1><p class="subtitle">Оригинални проверки, бележки и правила.</p></div><div class="simple-grid"><button class="simple-card popup" data-popup="windowpopup.html"><span class="feature-icon">◇</span><b>WhiteFlag Check — ЕГН / Булстат</b><small>Отвори оригиналната бележка</small></button><button class="simple-card popup" data-popup="windowpopup2.html"><span class="feature-icon">◇</span><b>WhiteFlag Check — Бюджет Булстат</b><small>Отвори оригиналната бележка</small></button><button class="simple-card popup" data-popup="windowpopup6.html"><span class="feature-icon">◇</span><b>WhiteFlag Rules</b><small>Отвори оригиналните правила</small></button><button class="simple-card popup" data-popup="windowpopup3.html"><span class="feature-icon">▤</span><b>Credit Limit Change</b><small>Отвори оригиналната бележка</small></button></div></section>
-
-<section class="view" id="view-schedule"><div class="page-heading"><p class="eyebrow">DAILY WORK</p><h1>Работен график</h1><p class="subtitle">Оригиналните задачи по смени и Excel графици.</p></div><div class="shift-grid">
-<article class="shift-card"><span>☀</span><b>First Shift</b><strong>08:30 – 09:00</strong><ul><li>NPMT check → BPA/ATM</li><li>Clear NPMT</li><li>Recalculation</li><li>Garbage tag (reconnection/reactivation/storn)</li><li>Report (warning-new; barring)</li><li>Мейли от предходната вечер и нощни аларми</li><li>Обработени заявки от E-shop</li></ul></article>
-<article class="shift-card"><span>◷</span><b>През деня</b><strong>09:00 – 18:00</strong><ul><li>Night FraudAlarm</li><li>Запазване на termination файла</li><li>Non-active</li><li>Lost-stolen</li><li>ALL mail 22:00–09:00</li><li>Warning-all след load в 15:30</li><li>FraudAlarm</li></ul></article>
-<article class="shift-card"><span>☾</span><b>Second Shift</b><strong>13:30 – 22:00</strong><ul><li>CreditLimit Document</li><li>NILA report (събота или неделя вечер)</li><li>FraudAlarm</li><li>CreditLimit KA mail</li><li>Проверка за оставени флагчета</li><li>Garbage reconnection/reactivation според билинг календара</li></ul></article></div>
-<div class="section-heading spaced"><h2>Excel графици</h2></div><div class="panel schedule-panel">
-<p>Графиците са показани един под друг и с по-голяма височина, за да се виждат повече редове и колони. Ако таблицата не се зареди, провери дали имаш достъп до съответния Google Sheet.</p>
-<div class="excel-downloads"><strong>Excel файлове</strong><div class="download-links"><a href="November_2026.xlsx" download>↓ November 2026 – работен график (.xlsx)</a><a href="WF_EXP_RULES_UPDATES.xlsx" download>↓ WF_EXP_RULES_UPDATES – актуални правила (.xlsx)</a></div><p class="helper-note">Работният график и таблицата с WF-exp правилата са отделни Excel файлове. При месечна актуализация заменяй само файла на графика. WF-exp правилата се изтеглят от отделния файл WF_EXP_RULES_UPDATES.xlsx.</p></div>
-<div class="sheet-frames">
-<section class="sheet-frame november-excel-frame">
-<h3>Актуален работен график – November 2026</h3>
-<p class="helper-note">Графикът се зарежда директно от Google Drive / Google Sheets. При месечна актуализация качи новия файл в Google Drive, отвори го с Google Sheets и замени линка в кода с новия.</p>
-<div class="google-sheet-wrap">
-  <!-- МЕСЕЧНА АКТУАЛИЗАЦИЯ:
-       След като качиш новия график в Google Drive и го отвориш с Google Sheets,
-       копирай линка за вграждане (Embed) и го постави в src по-долу.
-       Не променяй линка в секцията "Архивен график – October 2026". -->
-  <iframe title="Актуален работен график – November 2026"
-    src="https://docs.google.com/spreadsheets/d/1NJpP4lqnLw5s03Ext2Y0MaylQGvh0j1q/edit?usp=sharing&ouid=118139578886591461186&rtpof=true&sd=true"
-    loading="lazy" allowfullscreen></iframe>
-</div>
-<details class="archive-details"><summary>Архивен график – October 2026</summary>
-<iframe title="Архивен работен график October 2026" loading="lazy" src="https://docs.google.com/spreadsheets/d/1Q3hWgbh98--00LMjQaqf7JBAnEIJVXHt/edit?usp=sharing&ouid=118139578886591461186&rtpof=true&sd=true"></iframe>
-</details>
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071d2b">
+<title>Yettel | Credit Control Helper</title>
+<style>
+:root{--navy:#071d2b;--navy2:#0c2b3b;--green:#b5e61d;--ink:#102b3a;--muted:#60727c;--line:#dce5e6}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--navy);color:white;overflow-x:hidden}
+.page{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.92fr);position:relative;isolation:isolate}
+.page:before{content:"";position:absolute;z-index:-1;inset:0 38% 0 0;background:linear-gradient(135deg,#061824,#0b2c3d 72%);clip-path:polygon(0 0,100% 0,76% 100%,0 100%)}
+.page:after{content:"";position:absolute;z-index:-2;right:0;top:0;width:48%;height:100%;background:radial-gradient(ellipse at 80% 25%,#28576a 0,transparent 42%),linear-gradient(145deg,#143b4d,#071d2b 70%)}
+.left{padding:clamp(32px,6vw,90px);display:flex;flex-direction:column;justify-content:center;min-height:100vh}.logo{font-size:clamp(42px,5vw,68px);font-weight:850;letter-spacing:-.075em;color:var(--green);line-height:1}.dash{width:54px;height:7px;border-radius:9px;background:var(--green);margin:54px 0 28px}.left h1{font-size:clamp(42px,5.4vw,72px);line-height:1.02;letter-spacing:-.055em;margin:0 0 18px;max-width:650px}.left .subtitle{font-size:clamp(18px,2vw,25px);color:#c6d2d8;margin:0}.features{display:flex;gap:clamp(18px,3vw,44px);margin-top:58px;flex-wrap:wrap}.feature{width:110px;text-align:center;color:#f1f6f7;font-size:14px;line-height:1.35}.feature .symbol{display:block;font-size:30px;margin-bottom:10px;color:var(--green)}
+.right{display:flex;align-items:center;justify-content:center;padding:35px}.login{width:min(100%,540px);background:rgba(250,253,250,.96);color:var(--ink);border:1px solid rgba(255,255,255,.75);border-radius:28px;padding:clamp(28px,4vw,54px);box-shadow:0 25px 80px #0005}.login h2{font-size:clamp(26px,3vw,36px);margin:0 0 8px;letter-spacing:-.04em}.login p{margin:0 0 30px;color:var(--muted);font-size:16px}.field-label{display:block;font-size:13px;font-weight:700;margin-bottom:9px}.select-wrap{position:relative}.select-wrap:after{content:"⌄";position:absolute;right:18px;top:10px;font-size:23px;color:#183748;pointer-events:none}select{appearance:none;width:100%;height:60px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 48px 0 18px;color:var(--ink);font:inherit;font-size:16px;outline:none}select:focus{border-color:#9bc51a;box-shadow:0 0 0 4px #b5e61d35}.enter{width:100%;height:62px;border:0;border-radius:14px;background:var(--green);color:#142b35;font-size:18px;font-weight:800;margin-top:22px;cursor:pointer;transition:transform .15s,filter .15s}.enter:hover{filter:brightness(1.04);transform:translateY(-1px)}.enter:disabled{opacity:.45;cursor:not-allowed;transform:none}.team{display:flex;align-items:center;justify-content:center;gap:10px;border-top:1px solid var(--line);margin-top:28px;padding-top:22px;font-weight:750}.team span{color:#83ae00}.error{min-height:20px;color:#b42318;font-size:13px;margin-top:10px}.footer{position:absolute;bottom:20px;left:clamp(32px,6vw,90px);font-size:11px;letter-spacing:.12em;color:#9eb1b9}
+@media(max-width:900px){.page{grid-template-columns:1fr}.page:before{inset:0;clip-path:none}.page:after{display:none}.left{min-height:auto;padding:38px 28px 10px}.logo{font-size:44px}.dash{margin:28px 0 18px}.left h1{font-size:42px}.features{display:none}.right{padding:24px 20px 70px}.login{max-width:520px}.footer{left:28px;bottom:18px}}
+@media(max-width:480px){.left{padding:30px 22px 4px}.left h1{font-size:36px}.left .subtitle{font-size:16px}.right{padding:20px 14px 65px}.login{padding:26px 22px;border-radius:22px}.login h2{font-size:26px}.login p{font-size:14px;margin-bottom:24px}select{height:56px}.enter{height:58px}}
+</style>
+</head>
+<body>
+<div class="page">
+<section class="left">
+  <div class="logo">Yettel.</div>
+  <div class="dash"></div>
+  <h1>Credit Control<br>Helper</h1>
+  <p class="subtitle">Вътрешен екипен портал</p>
+  <div class="features">
+    <div class="feature"><span class="symbol">◉</span>Бази<br>и достъп</div>
+    <div class="feature"><span class="symbol">⌘</span>SQL<br>инструменти</div>
+    <div class="feature"><span class="symbol">▦</span>Работен<br>график</div>
+    <div class="feature"><span class="symbol">▤</span>Шаблони<br>и коментари</div>
+  </div>
 </section>
-<section class="sheet-frame"><h3>WF-exp rules – актуални правила</h3><iframe title="WhiteFlag правила и актуализации" loading="lazy" src="https://docs.google.com/spreadsheets/d/1OFBzGvt_tx3ybsoLUU_kCl4mS4mKOpf_/edit?usp=sharing&ouid=118139578886591461186&rtpof=true&sd=true"></iframe></section>
-</div>
-<section class="wf-rules-preview">
-<h3>Нови правила за WF-exp rules</h3>
-<div class="table-scroll"><table><thead><tr><th>тип клиент</th><th>живот в мрежата</th><th>тип сделка</th><th>сума</th><th>отговор</th><th>детайли</th></tr></thead><tbody>
-<tr><td>PORT-IN</td><td>нов</td><td>с една карта (и няма други активни услуги)</td><td>—</td><td>Да не се изисква предплата</td><td>—</td></tr>
-<tr><td>PORT-IN</td><td>нов</td><td>с повече от една карта (или има други активни услуги)</td><td>—</td><td>2 месечни такси предплата</td><td>—</td></tr>
-<tr><td>successful close col case</td><td>шест месеца нов живот в мрежата</td><td>всяка</td><td>—</td><td>разглеждаме го стандартно – не важат ограничения</td><td>—</td></tr>
-</tbody></table></div>
-<p class="helper-note">Трите нови правила са добавени към съществуващия файл „WF_EXP_RULES_UPDATES.xlsx“, заедно с всички предишни правила.</p>
+<section class="right">
+  <form class="login" id="loginForm">
+    <h2>Добре дошли</h2>
+    <p>Избери член на екипа, за да продължиш.</p>
+    <label class="field-label" for="teamMember">Член на екипа</label>
+    <div class="select-wrap"><select id="teamMember" required><option value="">Избери член на екипа</option></select></div>
+    <div class="error" id="error" aria-live="polite"></div>
+    <button class="enter" id="enterButton" type="submit" disabled>Вход　→</button>
+    <div class="team">♧　Credit Control <span>Team</span></div>
+  </form>
 </section>
-</div></div></section>
-<footer>Credit Control Helper · Редизайн с пренесено оригинално съдържание</footer></main></div><script src="js/main.js"></script></body></html>
+<div class="footer">INTERNAL WORKSPACE · CREDIT CONTROL</div>
+</div>
+<script>
+// Членове на екипа – подредени по азбучен ред.
+const TEAM_MEMBERS = [
+  "Desislava Metodieva",
+  "Domenika Stoyanova",
+  "Georgi Yanev",
+  "Radostina Sabeva",
+  "Vesela Milusheva"
+];
+const select = document.getElementById("teamMember");
+const enterButton = document.getElementById("enterButton");
+TEAM_MEMBERS.forEach(name => {
+  const option = document.createElement("option");
+  option.value = name;
+  option.textContent = name;
+  select.appendChild(option);
+});
+select.addEventListener("change", () => { enterButton.disabled = !select.value; document.getElementById("error").textContent = ""; });
+document.getElementById("loginForm").addEventListener("submit", event => {
+  event.preventDefault();
+  if (!select.value) { document.getElementById("error").textContent = "Моля, избери член на екипа."; return; }
+  sessionStorage.setItem("cch_user", select.value);
+  window.location.href = "app.html";
+});
+</script>
+</body>
+</html>
